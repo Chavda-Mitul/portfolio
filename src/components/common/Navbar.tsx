@@ -18,6 +18,8 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
+  const isScrolledRef = useRef(false);
+  const isVisibleRef = useRef(true);
   const pathname = usePathname();
   const isResumePage = pathname === "/resume";
 
@@ -25,17 +27,22 @@ export const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Optimize state updates to avoid unnecessary re-renders
-      if (currentScrollY > 100 && !isScrolled) {
+      if (currentScrollY > 100 && !isScrolledRef.current) {
+        isScrolledRef.current = true;
         setIsScrolled(true);
-      } else if (currentScrollY <= 100 && isScrolled) {
+      } else if (currentScrollY <= 100 && isScrolledRef.current) {
+        isScrolledRef.current = false;
         setIsScrolled(false);
       }
 
       if (currentScrollY < lastScrollY.current || currentScrollY < 100) {
-        if (!isVisible) setIsVisible(true);
+        if (!isVisibleRef.current) {
+          isVisibleRef.current = true;
+          setIsVisible(true);
+        }
       } else if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        if (isVisible) {
+        if (isVisibleRef.current) {
+          isVisibleRef.current = false;
           setIsVisible(false);
           setIsMenuOpen(false);
         }
@@ -46,7 +53,7 @@ export const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isScrolled, isVisible]);
+  }, []);
 
   return (
     <nav

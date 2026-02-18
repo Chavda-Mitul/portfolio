@@ -30,9 +30,13 @@ export async function POST(request: Request) {
   }
 
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
     const qevResponse = await fetch(
-      `http://api.quickemailverification.com/v1/verify?email=${senderEmail}&apikey=${process.env.QEV_API_KEY}`
+      `http://api.quickemailverification.com/v1/verify?email=${senderEmail}&apikey=${process.env.QEV_API_KEY}`,
+      { signal: controller.signal }
     );
+    clearTimeout(timeoutId);
 
     const data = await qevResponse.json();
 

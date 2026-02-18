@@ -24,7 +24,7 @@ export const ExperienceCard: FC<ExperienceCardProps> = ({
   const ref = useRef(null);
 
   const isInView = useInView(ref, {
-    once: false,
+    once: true,
     margin: "-50px",
     amount: 0.2,
   });
