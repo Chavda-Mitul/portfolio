@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 interface TechClipProps {
   name: string;

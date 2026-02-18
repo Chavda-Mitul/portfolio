@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import React, { useRef, useEffect, useState, FC } from "react";
 
 import { nasalization } from "@/app/fonts";

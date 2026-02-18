@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { IconType } from "react-icons";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa6";
 
