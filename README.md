@@ -33,8 +33,8 @@
 
 A modern, responsive portfolio website built with **Next.js 15** and **React 19**, featuring stunning dark aesthetics and smooth animations. This project showcases advanced web development practices with a focus on performance, accessibility, and user experience.
 
-**🌐 Live Demo:** [aarab.vercel.app](https://aarab.vercel.app)
-**📱 GitHub:** [github.com/aarabii/An](https://github.com/aarabii/An)
+**🌐 Live Demo:** [mitul.vercel.app](https://mitul-dev.vercel.app/)
+
 
 ## ✨ Features
 
