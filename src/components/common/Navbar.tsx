@@ -10,7 +10,6 @@ import { RiMenu4Fill, RiCloseFill } from "react-icons/ri";
 import { quentine } from "@/app/fonts";
 
 import { Button } from "../ui/button";
-import { createBlurDataURL } from "@/lib/BlurDataURL";
 import { selfData } from "@/constant";
 
 export const Navbar = () => {
@@ -77,16 +76,8 @@ export const Navbar = () => {
                 alt="logo"
                 width={40}
                 height={40}
-                placeholder="blur"
-                loading="lazy"
-                quality={100}
-                blurDataURL={`${createBlurDataURL({
-                  width: 40,
-                  height: 40,
-                })}`}
-                style={{
-                  objectFit: "cover",
-                }}
+                priority
+                style={{ objectFit: "cover" }}
               />
             </div>
             <span

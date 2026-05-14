@@ -31,7 +31,7 @@ export const PreLoader = () => {
     // Hide preloader after animation completes
     const timer = setTimeout(() => {
       setShowPreloader(false);
-    }, 3500); // Adjust timing as needed
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -43,7 +43,7 @@ export const PreLoader = () => {
           className="overflow-x-hidden w-full h-screen fixed inset-0 z-50"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="flex items-center justify-center fixed h-full w-full">
             <Background />

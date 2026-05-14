@@ -17,12 +17,12 @@ export const selfData = {
     "System Designer",
     "Real-Time Systems Expert",
   ],
-  desc: "Building scalable, real-time web applications with clean architecture and performance-first design.",
-  bio: "Full-Stack Software Engineer with 2+ years of experience building scalable web and mobile applications using React, Next.js, and TypeScript, with backend APIs in Node.js and PostgreSQL. Strong in real-time interfaces (WebSockets/SSE), secure authentication (JWT/RBAC), and performance-focused architecture.",
+  desc: "Scaling products from 0 to 1,000+ users with RAG pipelines, multi-agent systems, and high-concurrency real-time applications.",
+  bio: "Full-Stack Engineer with 2.6 years of experience at Neome.ai, where I scaled core products from 0 to 1,000+ active users. Specialized in designing and building production-grade RAG pipelines, multi-agent systems, and high-concurrency real-time applications using TypeScript, Python, LangGraph, and modern LLM tooling. Delivered measurable efficiency gains through intelligent automation.",
   about: [
-    "Full-Stack Software Engineer with 2+ years of experience building scalable web and mobile applications. Strong expertise in React, Next.js, and TypeScript with backend systems in Node.js and PostgreSQL.",
-    "Experienced in real-time systems using WebSockets and SSE, secure authentication (JWT, RBAC), caching strategies, and performance optimization.",
-    "Comfortable designing and shipping end-to-end features with clean UI, reliable APIs, and optimized data flows.",
+    "Full-Stack Engineer with 2.6 years of experience at Neome.ai, scaling core products from 0 to 1,000+ active users. Strong in React, Next.js, TypeScript, and Node.js with a focus on clean architecture and production-ready delivery.",
+    "Specialized in production-grade RAG pipelines, multi-agent systems, and LLM tooling using LangGraph and Python. Comfortable owning full-stack features from API design through to polished UI.",
+    "Deep experience with high-concurrency real-time systems (WebSockets, SSE), secure auth (JWT, RBAC), and performance optimization. Delivered measurable efficiency gains through intelligent automation.",
   ],
 
   socials_username: {
