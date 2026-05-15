@@ -27,6 +27,7 @@ export const Contact = () => {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-16"
         >
+          <span className="section-label">04 — Contact</span>
           <motion.h2
             className={`text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 relative ${nasalization.className}`}
             initial={{ opacity: 0, scale: 0.9 }}

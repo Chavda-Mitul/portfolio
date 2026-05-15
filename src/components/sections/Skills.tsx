@@ -81,6 +81,7 @@ export const Skills = () => {
 
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-8">
+          <span className="section-label">01 — Stack</span>
           <motion.h2
             className={`${nasalization.className} text-4xl font-bold text-primary`}
             initial={{ opacity: 0, y: 20 }}

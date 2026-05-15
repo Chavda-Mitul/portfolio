@@ -48,23 +48,21 @@ export const ProjectCard: FC<ProjectCardProps> = ({
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       whileHover={{
-        y: -10,
-        scale: 1.02,
+        y: -6,
         transition: {
-          duration: 0.3,
-          type: "spring" as const,
-          stiffness: 400,
-          damping: 25,
+          duration: 0.25,
+          ease: "easeOut",
         },
       }}
       className="group h-full"
     >
       <Card
-        className="relative overflow-hidden backdrop-blur-xl border transition-all duration-500 h-full flex flex-col shadow-xl hover:shadow-2xl group-hover:shadow-luxury-hover-glow/30 rounded-2xl"
+        className="relative overflow-hidden backdrop-blur-xl border transition-all duration-300 h-full flex flex-col shadow-xl group-hover:shadow-2xl rounded-2xl"
         style={{
           background: "hsl(var(--glass-bg))",
           borderColor: "hsl(var(--glass-border))",
           borderRadius: "1rem",
+          transition: "border-color 0.3s ease, box-shadow 0.3s ease",
         }}
       >
         {/* Glass shimmer effect */}

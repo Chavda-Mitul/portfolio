@@ -16,8 +16,15 @@ export const SkillCard = ({
 }) => {
   return (
     <motion.div
-      className={`${className} flex flex-row items-center justify-center gap-4 grayscale-[90%] hover:grayscale-0 transition-all duration-300 px-3 py-1 w-fit h-fit group`}
-      whileHover={{ scale: 1.05, y: -5 }}
+      className={`${className} flex flex-row items-center justify-center gap-4 grayscale-[85%] hover:grayscale-0 transition-all duration-300 px-4 py-2 rounded-xl w-fit h-fit group border border-transparent hover:border-white/10`}
+      style={{
+        "--hover-glow": `0 0 14px ${color}40`,
+      } as React.CSSProperties}
+      whileHover={{
+        scale: 1.05,
+        y: -4,
+        boxShadow: `0 0 14px ${color}40`,
+      }}
       transition={{ duration: 0.2 }}
     >
       <motion.div
@@ -34,7 +41,8 @@ export const SkillCard = ({
       <motion.small
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        className="text-sm text-secondry font-semibold group-hover:text-primary-foreground/90"
+        className="text-sm font-semibold"
+        style={{ color: "hsl(var(--foreground))" }}
       >
         {title}
       </motion.small>

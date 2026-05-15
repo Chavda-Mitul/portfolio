@@ -33,14 +33,15 @@ export const Background = () => {
       ref={containerRef}
       className="top-0 fixed -z-10 h-full w-full overflow-hidden"
     >
-      {/* Background Shaders */}
       <MeshGradient
         className="absolute inset-0 w-full h-full"
-        colors={["#000000", "#8b5cf6", "#ffffff", "#1e1b4b", "#4c1d95"]}
-        speed={0.1}
+        colors={["#000000", "#0f0a1e", "#1e0533", "#3b0764", "#6d28d9"]}
+        speed={0.08}
       />
-      {/* Optimized: Removed second MeshGradient layer for performance.
-          The first layer provides the core visual. */}
+      {/* Dark overlay ensures text readability at all gradient phases */}
+      <div className="absolute inset-0 bg-black/55" />
+      {/* Grain texture for premium depth */}
+      <div className="absolute inset-0 grain-overlay" />
     </div>
   );
 };

@@ -45,13 +45,10 @@ export const ExperienceCard: FC<ExperienceCardProps> = ({
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
       whileHover={{
-        scale: 1.02,
-        y: -8,
+        y: -4,
         transition: {
-          duration: 0.3,
-          type: "spring" as const,
-          stiffness: 400,
-          damping: 25,
+          duration: 0.25,
+          ease: "easeOut",
         },
       }}
       className="relative flex items-start space-x-8 group"
@@ -70,10 +67,12 @@ export const ExperienceCard: FC<ExperienceCardProps> = ({
       {/* Content */}
       <motion.div className="flex-1">
         <Card
-          className="relative overflow-hidden backdrop-blur-xl border transition-all duration-500 shadow-xl hover:shadow-2xl group-hover:shadow-luxury-hover-glow/20"
+          className="relative overflow-hidden backdrop-blur-xl border transition-all duration-300 shadow-xl hover:shadow-2xl"
           style={{
             background: "hsl(var(--glass-bg))",
             borderColor: "hsl(var(--glass-border))",
+            borderLeftColor: "hsl(270 100% 62%)",
+            borderLeftWidth: "2px",
           }}
         >
           {/* Glass shimmer effect */}

@@ -31,6 +31,7 @@ export function Experience() {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-16"
         >
+          <span className="section-label">02 — Work</span>
           <motion.h2
             className={`${nasalization.className} text-4xl md:text-5xl font-bold text-primary`}
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +53,7 @@ export function Experience() {
         <div className="relative">
           {/* Timeline line */}
           <motion.div
-            className="absolute left-6 top-0 w-px bg-gradient-to-b from-primary/50 via-secondary/30 to-transparent"
+            className="absolute left-6 top-0 w-px bg-gradient-to-b from-violet-500 via-purple-700 to-transparent"
             style={{ height: `${experienceData.length * 200}px` }}
             initial={{ scaleY: 0, originY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}

@@ -31,6 +31,7 @@ export const Projects = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
+          <span className="section-label">03 — Projects</span>
           <motion.h2
             className={`${nasalization.className} text-4xl md:text-5xl font-bold text-primary`}
             initial={{ opacity: 0, y: 20 }}
@@ -42,7 +43,7 @@ export const Projects = () => {
         </motion.div>
 
         <motion.div
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
