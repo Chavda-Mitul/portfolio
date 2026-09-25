@@ -1,0 +1,70 @@
+{
+  "roles": [
+    {
+      "id": "neomenta-engineer",
+      "company": "Neomenta Pvt. Ltd.",
+      "role": "Software Engineer",
+      "dateLabel": "Aug 2023 → Present",
+      "track": "Full-time",
+      "contribution": "Full-stack engineering / Real-time systems",
+      "summary": "Architecting scalable full-stack systems serving 2,000+ daily users. Building visual query builders, automated field mapping engines, and real-time analytics infrastructure with WebSockets, Redis, and React.",
+      "metrics": [
+        { "value": "2K+", "label": "Daily users" }
+      ],
+      "sections": [
+        {
+          "title": "Full-stack architecture",
+          "body": "I design and build scalable systems that serve thousands of daily users with clean, maintainable code.",
+          "bullets": [
+            "Architected component-based React and React Native architecture with reusable patterns for state management and real-time data synchronization across web and mobile platforms.",
+            "Built a visual query builder with autocomplete, validation, and real-time preview — cutting query creation time by 60% and boosting user productivity by 40%.",
+            "Engineered an automated field mapping engine that resolves 50+ fields across forms and workflows using pattern matching and validation rules — eliminating ~90% of manual configuration effort."
+          ]
+        },
+        {
+          "title": "Real-time systems",
+          "body": "I developed the real-time infrastructure that powers live updates for thousands of concurrent users.",
+          "bullets": [
+            "Built real-time analytics infrastructure using WebSocket streams, server-sent events, and Redis caching — delivering sub-second data updates to 2,000+ daily users at 99.9% uptime.",
+            "Optimized Workflow Builder performance with diffing algorithms and WebSocket-based synchronization for drag-and-drop interactions — achieving 30% faster rendering.",
+            "Built offline-capable React Native workflows and a shared component library spanning 3+ modules, accelerating cross-platform delivery."
+          ]
+        },
+        {
+          "title": "Engineering practice",
+          "bullets": [
+            "Work across the full stack: from React/Next.js interfaces to Node.js/Fastify APIs to PostgreSQL/Redis data layers.",
+            "Focus on performance, reliability, and clean architecture in every component and service I build.",
+            "Write tests and review code as part of disciplined delivery practice."
+          ]
+        }
+      ],
+      "tech": ["React", "TypeScript", "React Native", "WebSockets", "Redis", "Node.js", "PostgreSQL"],
+      "links": [
+        { "label": "Company website", "href": "https://neomenta.com" }
+      ]
+    },
+    {
+      "id": "tatvasoft-intern",
+      "company": "TatvaSoft Pvt. Ltd.",
+      "role": "Frontend Developer Intern",
+      "dateLabel": "Jan 2023 → Jun 2023",
+      "track": "Internship",
+      "contribution": "Frontend development / Team leadership",
+      "summary": "Led a team of 3 to build a modular LMS platform, implemented JWT authentication flows, and designed UI/UX prototypes that won 1st Prize internally.",
+      "tech": ["React", "JWT", "UI/UX Design"],
+      "sections": [
+        {
+          "title": "Internship contribution",
+          "body": "A 6-month internship where I led frontend development for an LMS platform and delivered high-quality UI/UX work.",
+          "bullets": [
+            "Led a team of 3 developers to build a modular Learning Management System from scratch.",
+            "Implemented secure JWT authentication and authorization flows.",
+            "Designed UI/UX prototypes that won 1st Prize in an internal design competition."
+          ]
+        }
+      ],
+      "links": []
+    }
+  ]
+}

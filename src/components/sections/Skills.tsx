@@ -1,116 +1,58 @@
-"use client";
+import { motion } from 'framer-motion';
+import { Container } from '../ui/Container';
 
-import { motion } from "framer-motion";
-import React, { useRef, useEffect, useState, FC } from "react";
+const SKILL_CATEGORIES = [
+    {
+        title: 'Frontend',
+        skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    },
+    {
+        title: 'Backend',
+        skills: ['Node.js', 'Fastify', 'Express', 'PostgreSQL', 'Redis', 'MongoDB'],
+    },
+    {
+        title: 'Mobile',
+        skills: ['React Native', 'Expo'],
+    },
+    {
+        title: 'DevOps & Cloud',
+        skills: ['Docker', 'AWS', 'Vercel', 'GitHub Actions'],
+    },
+];
 
-import { nasalization } from "@/app/fonts";
-import { skillsData } from "@/constant";
-import { SkillCard } from "@/components/Cards";
-
-interface LogoProps {
-  title: string;
-  logoComponent: React.FC;
-  color: string;
-}
-
-interface SkillsDataProps {
-  title: string;
-  data: LogoProps[];
-}
-
-interface MarqueeProps {
-  skills: LogoProps[];
-  direction: "left" | "right";
-}
-
-const Marquee: FC<MarqueeProps> = ({ skills, direction }) => {
-  const marqueeRef = useRef<HTMLDivElement>(null);
-  const [marqueeWidth, setMarqueeWidth] = useState(0);
-
-  useEffect(() => {
-    const measureWidth = () => {
-      if (marqueeRef.current) {
-        setMarqueeWidth(marqueeRef.current.scrollWidth / 2);
-      }
-    };
-
-    measureWidth();
-    window.addEventListener("resize", measureWidth);
-
-    return () => window.removeEventListener("resize", measureWidth);
-  }, [skills]);
-
-  const speedFactor = 50;
-  const animationDuration = marqueeWidth > 0 ? marqueeWidth / speedFactor : 0;
-
-  const animateX =
-    direction === "right" ? [0, -marqueeWidth] : [-marqueeWidth, 0];
-
-  return (
-    <div className="my-2">
-      <div className="relative overflow-hidden py-2">
-        <motion.div
-          ref={marqueeRef}
-          className="flex flex-row gap-8 whitespace-nowrap"
-          animate={marqueeWidth > 0 ? { x: animateX } : {}}
-          transition={{
-            repeat: Infinity,
-            duration: animationDuration,
-            ease: "linear",
-          }}
-        >
-          {[...skills, ...skills].map((skill, index) => (
-            <SkillCard
-              key={`${skill.title}-${index}`}
-              title={skill.title}
-              color={skill.color || "#ffffff"}
-              Icon={skill.logoComponent}
-              className="lg:pr-16 md:pr-8 sm:pr-4 pr-2 flex-shrink-0"
-            />
-          ))}
-        </motion.div>
-      </div>
-    </div>
-  );
-};
-
-export const Skills = () => {
-  return (
-    <section id="skills" className="py-16 overflow-hidden relative">
-
-
-      <div className="container mx-auto relative z-10">
-        <div className="text-center mb-8">
-          <span className="section-label">01 — Stack</span>
-          <motion.h2
-            className={`${nasalization.className} text-4xl font-bold text-primary`}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            My Skills
-          </motion.h2>
-        </div>
-
-        {(skillsData as SkillsDataProps[]).map((category, index) => {
-          let direction: "left" | "right";
-
-          if (index % 2 === 0) {
-            direction = "right";
-          } else {
-            direction = "left";
-          }
-
-          return (
-            <Marquee
-              key={category.title}
-              skills={category.data}
-              direction={direction}
-            />
-          );
-        })}
-      </div>
+export const Skills = () => (
+    <section id="skills" className="py-[16vw] md:py-24 bg-bg-primary">
+        <Container>
+            <motion.h2
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="font-mono text-[2.5vw] md:text-base uppercase tracking-widest text-fg-secondary mb-[6vw] md:mb-16"
+            >
+                <span className="text-fg-primary/30">03 /</span> Skills
+            </motion.h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-[6vw] md:gap-8">
+                {SKILL_CATEGORIES.map((cat, i) => (
+                    <motion.div
+                        key={cat.title}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: i * 0.1 }}
+                    >
+                        <h3 className="font-mono text-[3vw] md:text-sm uppercase tracking-widest text-fg-primary mb-[3vw] md:mb-4">
+                            {cat.title}
+                        </h3>
+                        <div className="flex flex-wrap gap-[2vw] md:gap-2">
+                            {cat.skills.map((s) => (
+                                <span key={s} className="px-[3vw] md:px-3 py-[1vw] md:py-1 rounded-full border border-border-primary text-[2.5vw] md:text-xs font-mono text-fg-secondary">
+                                    {s}
+                                </span>
+                            ))}
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+        </Container>
     </section>
-  );
-};
+);
